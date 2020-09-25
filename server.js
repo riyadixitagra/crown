@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const enforce = require('express-sslify');
 
-if (process.env.NODE_ENV !== 'production') require('.env').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-// (sk_test_51HRLgpAXSZdOH3bcZ40PleoBAn26CvunFmUI1Pt6enW954IWtqdnnZgVoZ5dooBBLYNS7RJtVgSa9wLlvDUjH8hR00DI4PeR9y);
+
 
 const app = express();
 const port = process.env.PORT || 5000;
